@@ -19,7 +19,7 @@ $(document).ready(function(){
   var list = $('<ul></ul>');
   var l;
     for(i =0; i < kloutPeople.length; i++){
-        console.log(kloutPeople[i].name  + " " + kloutPeople[i].score);
+       // console.log(kloutPeople[i].name  + " " + kloutPeople[i].score);
        var kloutItem = kloutPeople[i].name +  " Klout Score " + kloutPeople[i].score;
        var kloutData = $('<li></li>');
        kloutData.html(kloutItem);
