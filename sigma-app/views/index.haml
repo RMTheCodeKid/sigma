@@ -1,11 +1,7 @@
-#content
-  #page
-    %p How Influential Are You?
-
-    %form#index-form{ :action => "/", :method => "POST" }
-      %label
-        %p Enter your Twitter username below:
-      %input
-      #btn-send
-        %button send
+%div.container
+  %p#phrase How Influential Are You?
+  %p Enter your Twitter username below:
+  %form{ :class=> "form-input", :action => "" }
+    %input{:type => "text", :class => "input-medium search-query"}
+      %button{:type => "button", :id => "userLookup", :class => "btn"}Submit
 
