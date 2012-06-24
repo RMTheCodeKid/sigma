@@ -1,5 +1,9 @@
-%h1 The Home Page
-%p
-  Welcome to my website made with Sinatra and HAML.
-%p
-  This is the home page and this is some text to fill out the home page!
+#content
+  #page
+    %form#index-form{ :action => "/", :method => "POST" }
+      %label
+        %p Enter your Twitter username below:
+      %input
+      #btn-send
+        %button send
+
