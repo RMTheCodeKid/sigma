@@ -1,24 +1,32 @@
 $(document).ready(function(){
 
-  var kloutKey = "jd6cc9femtsv3ssxzfuz37tp";
+  //var kloutPeople = {};
+
+  var kloutPeople =  [
+      {"name":"bradwilson", "score": "58.270538330078125"},
+      {"name":"carolineghosn", "score":" 57.5209846496582"},
+      {"name":"SaraJChipps", "score":"57.16282653808594"},
+      {"name":"gblock", "score":"54.87932205200195"},
+      {"name":"amandapouchot", "score":"54.46243667602539"}
+   ];
+
+
+
 
   $("#userLookup").click(function(){
 
-   var userName = $("input").val();
+   //var userName = $("input").val();
+  var list = $('<ul></ul>');
+  var l;
+    for(i =0; i < kloutPeople.length; i++){
+        console.log(kloutPeople[i].name  + " " + kloutPeople[i].score);
+       var kloutItem = kloutPeople[i].name +  " Klout Score " + kloutPeople[i].score;
+       var kloutData = $('<li></li>');
+       kloutData.html(kloutItem);
+      list.append(kloutData);
+    }
+    $("#influencees").append(list);
 
-   $.ajax({
-     url: "http://api.klout.com/v2/identity.json/twitter?screenName="+userName+"&key="+kloutKey,
-     crossDomain: true,
-     dataType: "json",
-     type: "GET",
-     success: function(data){
-        console.log(data);
-     },
-     error: function(data){
-        console.log(data);
-     }
-   })//end of ajax call
-
-  })//end of userLookup for KloutId
+  })//end of userLookup for Klout Influences & Influencers
 
 }) //End of .ready() function
