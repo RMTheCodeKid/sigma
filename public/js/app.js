@@ -14,19 +14,19 @@ $(document).ready(function(){
 
 
   $("#userLookup").click(function(){
+    $("#influencees").html("");
 
    //var userName = $("input").val();
   var list = $('<ul></ul>');
   var l;
     for(i =0; i < kloutPeople.length; i++){
        // console.log(kloutPeople[i].name  + " " + kloutPeople[i].score);
-       var kloutItem = kloutPeople[i].name +  " Klout Score " + kloutPeople[i].score;
-       var kloutData = $('<li></li>');
+       var kloutItem = kloutPeople[i].name + "  " +  " Klout Score " + kloutPeople[i].score + "\n";
+       var kloutData = $('<ul></ul>');
        kloutData.html(kloutItem);
-      list.append(kloutData);
+       list.append(kloutData);
     }
     $("#influencees").append(list);
-
   })//end of userLookup for Klout Influences & Influencers
 
 }) //End of .ready() function
